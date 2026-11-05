@@ -1,0 +1,15 @@
+ {%extends "new.html" %}
+{%block bi %}
+Редактировать
+{% endblock %}
+{%block nu %}
+ <div class="containermt-5">
+   <form method="post">
+        <input type="text" name="title" value="{{article.title}}" placeholder="Загаловк" > <br>
+        <input type="text" name="intro" value="{{article.intro}}"   placeholder="Введение"> <br>
+        <textarea name="text"     placeholder="текст для статьи" rows="15" cols="60">"{{article.text}}"  </textarea>
+        <input type="submit" value="Сохранить">
+ </div>
+
+
+  {% endblock %}

@@ -1,0 +1,29 @@
+{%extends "new.html" %}
+{%block bi %}
+<h1> Все статьи </h1>
+{% if articles %}
+  {% for article in articles %}
+    <div>
+    <h2>{{article.title}}</h2>
+    <p> {{article.intro}}</p>
+     <p> {{article.date.strftime('%d.%m.%Y')}} </p>
+    <A href= "/posts/{{article.id }}"> Детальнее </A>
+
+
+
+    </div>
+
+
+    {% endfor %}
+ {% endif%}
+{% if not   articles %}
+<p> Статей нет. <A  href="/create-article " >Создайте пожалуста статю  </A>  </p>
+
+
+{% endif%}
+
+
+
+
+{% endblock %}
+

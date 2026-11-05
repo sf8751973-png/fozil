@@ -1,0 +1,19 @@
+{%extends "new.html" %}
+{%block bi %}
+Удалить статю
+{% endblock %}
+{%block nu %}
+<div>
+    <h1> Вы точно хотите удалить статю{{article.title}}</h1>
+    <P> Эта действително нелзя отменить </P>
+    <form method="post" action="/posts/{{article.id}}/confirm-del">
+        <input type="submit" value="да,удалить" class="btn btn-danger">
+
+    </form>
+    <a href="/post/{{article.id}}">Отмена</a>
+
+</div>
+
+
+
+{% endblock %}

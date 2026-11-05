@@ -1,0 +1,22 @@
+{%extends "new.html" %}
+{%block bi %}
+Главная страница
+{% endblock %}
+{%block nu %}
+<div class="container mt-5">
+    <h1>Все статьи</h1>
+    {% for article in articles %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">{{ article.title }}</h5>
+            <p class="card-text">{{ article.intro }}</p>
+            <p class="card-text">{{ article.text }}</p>
+            <small class="text-muted">{{ article.date.strftime('%d.%m.%Y %H:%M') }}</small>
+        </div>
+    </div>
+    {% endfor %}
+    {% if not articles %}
+    <p>Статей пока нет. <a href="/create-article">Создать статью</a></p>
+    {% endif %}
+</div>
+{% endblock %}
